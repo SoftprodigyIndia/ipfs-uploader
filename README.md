@@ -5,9 +5,9 @@ Files manipulation and adds to IPFS gracefully
 Confirmed working on Windows 7+ and Linux. Untested on mac.
 
 Dependencies required:
-* either `dotnet-sdk-2.0` for dev
-* or `dotnet-runtime` for production
-* `ffmpeg`
+* either `dotnet-sdk-2.0` for dev (https://dotnet.microsoft.com/download/linux-package-manager/ubuntu18-04/sdk-2.1.202)
+* or `dotnet-runtime` for production (https://dotnet.microsoft.com/download/linux-package-manager/ubuntu18-04/runtime-2.2.0)
+* `ffmpeg` (sudo apt install ffmpeg)
 * `ffprobe`
 * `imagemagick`
 * `ipfs` (go-ipfs) with a running deamon
@@ -34,10 +34,10 @@ Once your instance is started, it should listen on localhost:5000 by default and
 
 Curl example: ``curl -F "video=@./video.mp4"  http://localhost:5000/uploadVideo?videoEncodingFormats=240p,480p,720p&sprite=true``
 
-* `/uploadImage` 
+* `/uploadImage`
   * POST file input `files`. Needs to be an image otherwise it will end up as an error.
 
-* `/uploadSubtitle` 
+* `/uploadSubtitle`
   * POST text input `subtitle`. Needs to be a string starting with WEBVTT otherwise it will end up as an error.
 
 ## Configuration
