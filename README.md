@@ -13,6 +13,7 @@ Dependencies required:
 * `ipfs` (go-ipfs) with a running deamon
 
 ## Starting it in dev mode
+export ASPNETCORE_ENVIRONMENT=Development OR export ASPNETCORE_ENVIRONMENT=Production <br>
 Navigate to the `Uploader.Web` directory and just do `dotnet run`
 
 ## Available Calls
