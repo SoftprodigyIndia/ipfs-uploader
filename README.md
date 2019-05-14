@@ -10,7 +10,7 @@ Dependencies required:
 * `ffmpeg` (sudo apt install ffmpeg)
 * `ffprobe`
 * `imagemagick`
-* `ipfs` (go-ipfs) with a running deamon
+* `ipfs` (go-ipfs) with a running deamon (https://docs.ipfs.io/introduction/usage/)
 
 ## Starting it in dev mode
 export ASPNETCORE_ENVIRONMENT=Development OR export ASPNETCORE_ENVIRONMENT=Production <br>
