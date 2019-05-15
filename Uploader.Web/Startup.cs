@@ -32,7 +32,14 @@ namespace Uploader.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors();
+            // sps changed cors
+            // services.AddCors();
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
             services.AddMvc();
         }
 
@@ -54,9 +61,9 @@ namespace Uploader.Web
             // A déclarer avant UseMvc
             string origins = Configuration.GetValue<string>("Front:CORS");
             Console.WriteLine("CORS Settings: " + origins);
-            app.UseCors(
-                options => options.WithOrigins(origins).AllowAnyMethod()
-            );
+            // sps changed cors
+            // app.UseCors( options => options.WithOrigins(origins).AllowAnyMethod() );
+            app.UseCors("MyPolicy");
 
             app.UseMvc();
             app.UseStaticFiles();
